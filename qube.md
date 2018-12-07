@@ -1,5 +1,5 @@
 
-[img]
+![office](./userguide_imgs/office.png)
 
 See who's chatting with coworkers, out of the office, or stepped out for lunch.
 
@@ -22,6 +22,9 @@ See who's chatting with coworkers, out of the office, or stepped out for lunch.
 Not sure where someone is? Hover over a user's name in the sidebar for one second, and qube will **spotlight** your person of interest. They'll even do a little dance!
 
 But seriously. You know how some people always seem to be in meetings? Some of us have acquired the skill of pouncing exactly in between meetings. For everyone else, we've added the ability to "watch" people and be notified when they're back from breakfast or finished with meetings.
+
+![watch icon](./userguide_imgs/watch.png)
+
 
 Watching works in reverse, too - if you've just ended a meeting, we'll (wait a few minutes so you can catch your breath and then) send you a list of people who're interested in talking to you.
 
