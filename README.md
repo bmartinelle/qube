@@ -6,10 +6,10 @@ You’re about start an awesome new office lifestyle. But fair warning - you may
 
 
 
-####First Day in your Qube office? Check out our [Getting started Guide](./pages/GETTING_STARTED.md).
-####Already using Qube? Check out our [FAQ](./pages/FAQ.md).
+#### First Day in your Qube office? Check out our [Getting started Guide](./pages/GETTING_STARTED.md).
+#### Already using Qube? Check out our [FAQ](./pages/FAQ.md).
 ![qube](./pages/imgs/qube.png)
-##FEATURES
+## FEATURES
 
 ### Private Meetings
 
@@ -68,4 +68,4 @@ For the wanderers and world travelers! Qube will now auto-detect and update your
 *Start meetings in Qube with your personal Zoom link.* Just enable 'Always use Zoom Personal Meeting ID to start meetings' under settings (the gear icon) in Qube. (Note - meetings with PMIDs will take longer to start, so enable only if you use personal Zoom links, and consider starting conference room/auditorium meetings a minute or two early).
 
 
-####Ready to deploy your own installation of Qube? Our [Qube Deployment](./DEPLOYMENT.md) guide will help get you started.
+#### Ready to deploy your own installation of Qube? Our [Qube Deployment](./DEPLOYMENT.md) guide will help get you started.
