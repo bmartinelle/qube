@@ -2,88 +2,70 @@
 
 Qube is a virtual office that enables you to work remotely! It connects with Slack (a chat-based collaboration tool) and Zoom (a video and audio conferencing tool) to provide an effective virtual office experience. Qube provides office context - who's talking to who, who's out of the office and who just stepped out to lunch.
 
-![qube](qube.png)
+You’re about start an awesome new office lifestyle. But fair warning - you may never want to return to a traditional office!
 
-[Qube User Guide ](./qube.md)
 
-### Prerequisites
 
-Qube requires
-- [Slack](https://slack.com/). Sign up for the free Slack tier if your company does not currently use Slack.
-- [Zoom](https://zoom.us/) accounts. Note that a single Pro Zoom user ($15/mo) is enough to get started with Qube; you may want to upgrade to Pro accounts for users if you find that Qube is heavily used. Get started with a free Pro trial for three months.
-- A SSH-enabled server, domain, and https certificates. An AWS image is available with all dependencies (git, ruby, rails, redis, mysql, and yarn) preinstalled for your convenience; if you host elsewhere you will need to install all dependencies yourself.
-- A Linux or OSX machine to download Qube, configure your company's custom office, and manage deployments.
+####First Day in your Qube office? Check out our [Getting started Guide](./pages/GETTING_STARTED.md).
+####Already using Qube? Check out our [FAQ](./pages/FAQ.md).
+![qube](./pages/imgs/qube.png)
+##FEATURES
 
-Does that sound complicated? It's not, we promise! Contact us at qube@seeq.com and we'll help you get set up.
+### Private Meetings
 
-## Getting Started
+*Start meetings seamlessly.* Double click to knock on someone's office. This will send a desktop notification to everyone in that office. When someone accepts, you'll automatically be pulled into their office and setup with an instant Zoom meeting.
 
-These instructions will get you a copy of qube up and running on your local machine and deployed onto an AWS server. Note that you must download the code locally and configure server/office options before deploying to a server.
+*Invite someone to an ongoing meeting.* Click the invite button next to someone's name in the side panel.
 
-### Installing
+*Return home instantly after meetings end.* A meeting host (typically the owner of an office) can use Zoom's 'end meeting' button to end a meeting and send everyone home automatically. If your meeting host mysteriously disappears, anyone in the meeting can fill in by using Qube's 'end meeting' button.
 
-1. Install Ruby/Rails by following the instructions [here](installrails.com/).
-2. Download a copy of qube's source code (`git clone QUBE`)
-3. Install application dependencies by running `bundle install`. This may take awhile.
-3. Install yarn (`brew install yarn`) and run `yarn install`.
-4. Copy secrets.yml.example into a file called secrets.yml. This will be the source of your secret keys, server configuration, and office configuration settings. DO NOT distribute this file or add it to repository.
+*Notifications expire after two minutes.* If you accept a knock from a coworker after two minutes, your coworker may have moved on already. That's okay - we'll invite your coworker back to your office. Same thing for invites.
 
-## Zoom setup
+*Use conference rooms and common spaces for events and larger meetings.* Double click to enter a conference room or common space. Anyone (but probably the meeting owner, if there is one) can click 'start meeting' to open an instant Zoom meeting. There are no restrictions on who can enter a meeting room.
 
-4a. Visit https://developer.zoom.us/me/ and enable API usage. Copy your API Key and API Secret and paste into secrets.yml (zoom_api_key and zoom_api_secret under shared).
-4b. Navigate to the Webhooks tab and enable Webhooks. Under endpoint, add your intended qube server URL suffixed with '/zoom' (ex. 'https://qube.company.com/zoom').
+### People Watching
 
-## Slack setup
+Not sure where someone is? Hover over a user's name in the sidebar for one second, and qube will **spotlight** your person of interest. They'll even do a little dance!
 
-4c. Visit https://api.slack.com/apps and click Create an App. Set the App Name to 'qube' and choose your Slack Workplace.
-4d. Copy your Client ID and Client Secret and paste into secrets.yml (slack_client_id and slack_client_secret under shared). (You may also want to fill out slack_team_id in secrets.yml while you have slack open - instructions available in secrets.yml).
-4e. Under 'Add features and functionality', click on Slash Commands and add a command with the following information:
-- Name: '/qube'
-- Request URL: your intended qube server URL suffixed with '/slack/command' (https://qube.company.com/slack/command)
-- Short Description: 'Update your qube status!'
-- Usage Hint: '[help]''
-4f. Navigate to 'OAuth & Permissions', and then click on 'Add a new Redirect URL'. Your redirect URL should be your intended qube server URL suffixed with '/users/auth/slack/callback' (https://qube.company.com/users/auth/slack/callback)
-4g. Navigate to 'Interactive Components', click 'Enable Interactive Components', and add a Request URL. Your Request URL should be your intended qube server URL suffixed with '/slack' (https://qube.company.com/slack)
+But seriously. You know how some people always seem to be in meetings? Some of us have acquired the skill of pouncing exactly in between meetings. For everyone else, we've added the ability to "watch" people and be notified when they're back from breakfast or finished with meetings.
 
-4h. Finish update the secrets.yml file with the remaining keys (open_weather_key, num_offices, mailer_sender, secret_key_base, webpush_public_key/webpush_private_key) using the instructions in the comments above each key.
+Watching works in reverse, too - if you've just ended a meeting, we'll (wait a few minutes so you can catch your breath and then) send you a list of people who're interested in talking to you.
 
-### Build the application locally
+Advanced feature - you can check the list of people you're watching or who are watching you by running `/qube watching` or `/qube watchers` in slack. (Type `/qube help` if you need reminders of available slack commands).
 
-This step is optional, but highly recommended.
+### Intelligent Time Zones
 
-1. Run `bundle exec rake db:create db:migrate db:seed` to setup your database.
-1. Run `rails server` (or `rails s`)
-2. View the application (`localhost:3000`).
-3. (Optional) Run `rake jobs:work` to send reminders.
+*View all statuses in your local timezone.* Working remotely is awesome! Constantly converting time zones isn't. When you set your state to busy , away or BRB, you'll notice we ask you for a 'back by' time. Enter when you'll be back in a supported format (such as 1400 or 3pm) in your local timezone. This lets us display all 'back by' times in local times in the sidebar.
 
-## Deploy your office
+*Keep office statuses up to date.* Are you in the habit of taking reeaaalllly long lunches because you keep forgetting to update your status when you get back? Well, no more! Slack reminders are here to check up on you when you forget.
 
-These instructions are written for an AWS server using a preconfigured image.
+For the wanderers and world travelers! Qube will now auto-detect and update your timezone for your traveling convenience.
 
-### Deploying to a new server for the first time
+### Offices should be a little bit of fun too...
 
-0. Ensure that you can access the github repository using SSH (NOT HTTPS) - instructions here: https://help.github.com/articles/generating-an-ssh-key/
-1. Ensure that you can ssh onto the server that you are trying to deploy to. You must be using ssh keys to deploy using capistrano.
-2. The server in question must already have git, ruby, rails, redis, mysql, npm, and yarn installed. Use our suggested AWS image for convenience.
-3. New server info  (ssh key locations, IP address, server username, server name) must be added to config/deploy.rb (new ssh key location goes under ssh_options). Staging/test environment information can also be added for development.
-4. Run `cap production deploy:setup` to set up directories (unless using the image, which already has initial deploy set up).
-5. Run `cap production puma:config` and `cap production puma:nginx_config` to copy over puma (appserver) and nginx (reverse proxy server) config. You'll need to run `sudo service nginx restart` from the server to restart nginx.
-6. Add/update a database.yml and secrets.yml file under qube/shared/config (add a secret key base and add database information used to set up MySQL). You will also need to copy over your server certificate to /etc/ssl/certs/ and your server certificate key to /etc/ssl/private/. Your certificates will need to be named qube_production.crt and qube_production.key (or you will need to update the generated nginx config file).
-7. Run `cap production deploy`. To access rails console on the server machine, run `cap production rails:console`.
+*Update your name, office name, or status* by clicking and editing. States can be changed using the dropdown (available, busy, away, BRB, feeling social). Since context is so important in a virtual environment, we strongly recommend you set a status and 'back by' time when you set yourself to away, BRB, or busy.
 
-### Deploying to an existing server
+*Choose your avatar color and emoji.* Office life doesn't have to be so serious :) And while we're at it, make sure you choose a creative room name - your co-workers will appreciate it!
 
-Run `cap production deploy`.
+*Customize your office theme.* Maybe you prefer Dark Knight or Darcula to match your IDE's dark theme? Or try out our weather theme for a little seasonal change and a few surprises ;)
 
-Advanced:
-- You can rollback a release with `cap [stage] deploy:rollback` if a mistake has been made.
-- To access rails console on the server machine, run `cap production rails:console`.
+*Notifications with a little bit of snark.* Well, if you're that guy that never opens Slack or is constantly late coming back from lunch I think we can have a little bit of fun :D
 
-## Authors
+### Advanced Slack Support
 
-* **Nikhila Albert** - *Backend* - [totallyna](https://github.com/totallyna)
-* **Birgit Martinelle** - *Frontend* - [bmartinelle](https://github.com/bmartinelle)
+*Update your qube status through slack.* Forgot to update your qube status before stepping away? Update your status through slack using the new **/qube** command. Example: `/qube emergency ice cream break`
 
-## License
+*Slack everyone in your office.* Need to slack everyone in your office with notes at the end of a productive meeting? Use the slack icons in the sidebar to open direct messages to the people you're talking to.
 
-This project is licensed under the Q Public License 1.0 - see the [LICENSE.md](LICENSE.md) file for details.
+**Note: Slack integration works best when you have the desktop client installed. Please install from [https://slack.com/downloads](https://www.google.com/url?q=https://slack.com/downloads&sa=D&ust=1544216473551000) on your primary computer(s) if you're still using the browser version. It takes only 30 seconds.**
+
+### Advanced Zoom support
+
+*Import sheduled Zoom meetings.* For executives or sales staff especially! When you start a scheduled a Zoom meeting with a (potential) customer, Qube will automatically update your state to 'busy' and your status with relevant details.
+
+*Host scheduled Zoom meetings.* Offices can now host scheduled meetings. That means if you get stuck in a external customer call and need coworker support, you can simply invite them to your office (instead of copying/pasting the Zoom link or forwarding a meeting invite).
+
+*Start meetings in Qube with your personal Zoom link.* Just enable 'Always use Zoom Personal Meeting ID to start meetings' under settings (the gear icon) in Qube. (Note - meetings with PMIDs will take longer to start, so enable only if you use personal Zoom links, and consider starting conference room/auditorium meetings a minute or two early).
+
+
+####Ready to deploy your own installation of Qube? Our [Qube Deployment](./DEPLOYMENT.md) guide will help get you started.
