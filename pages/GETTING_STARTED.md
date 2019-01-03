@@ -1,25 +1,33 @@
 # Getting Started Guide
 
 You’re about start an awesome new office lifestyle. But fair warning - you may never want to return to a traditional office!
-
+### Let’s get the boring stuff out of the way
 Before you're ready to enter your new Qube you need both a Zoom and a Slack account. Contact your System Administrator if you do not have an account for both.
 
 *Note: Slack integration works best when you have the desktop client installed. Please install from <https://slack.com/downloads> on your primary computer(s) if you're still using the browser version. It takes only 30 seconds.*
 *To ensure you're not displayed as a Guest User while in Zoom Meetings make sure that you are logged into  Zoom and that your Zoom application is always up and running.*
 
-### Let’s get the boring stuff out of the way
+
+**Qube is only tested and supported in Google Chrome.**
+
 To login to your new virtual office click the link provided by your system administrator and use your slack credentials to login. **Be sure to accept all permissions.** If prompted to enter a slack team, make sure you enter the team name as provided by your admin.
 *Please note that Qube should not be used in Incognito Mode, without cookies or aggressive ad blockers.*
 
 
 ### Settle in.
-Let’s get started by **claiming your home office**. Find your new office (your office admin may have set aside a qube for you), and click on the home icon that appears in the lower right hand corner when you hover over it. You’ll automatically be returned here at the end of meetings.
+Let’s get started by **claiming your home office**. Find your new office (your office admin may have set aside a qube for you), and click on the home icon that appears in the lower right hand corner when you hover over it. 
+
+![claim your office](imgs/claimHome.png)
+
+You’ll automatically be returned here at the end of meetings.
 
 Next, update your name and office name if you need to (click to edit). We recommend you choose a creative room name - your co-workers will appreciate it!
 
 
 ### Meet your new co-workers.
 Double click to enter a common room (conference rooms, auditorium, water cooler, etc) or knock on someone’s office. You can also invite someone to your current room by clicking on the invite button next to their name in the side panel. 
+
+![invite](imgs/invite.png)
 
 On the flip side, if you receive a knock or invite, simply click on the notification to allow someone entrance into your office.
 Once you enter someone's office a Zoom meeting will automatically start.
@@ -39,8 +47,12 @@ To customize your theme click on your Avatar in the top left corner and select a
 
 You can also let others know how you feel by selecting an emotion as well as changing your avatar color.
 
+![invite](imgs/customize.png)
+
 ### Be present.
 Except when you're not. Stepping out to walk the dog? Grabbing lunch? Let your co-workers know! Update your status and enter a "back by time". Don't worry about doing time zone math - Qube will show each user all times in their local timezone. 
+
+![away](imgs/away.png)
 
 
 ### Pick your favorites.
@@ -48,11 +60,17 @@ Except when you're not. Stepping out to walk the dog? Grabbing lunch? Let your c
  
 Pin the offices of the people you talk to (like?) most on other floors (click the star icon in the upper right corner of any office). You’ll be able to see and knock on their offices without having to change floors - you will however, have to sacrifice one of your office plants.
 
+![pin an office](imgs/pin.png)
+
+![pinned offices](imgs/pinned.png)
+
 ### Be watchful.
 You know how some people always seem to be in meetings? Some of us have acquired the skill of pouncing exactly in between meetings. For everyone else, we’ve added the ability to “watch” people and be notified when they’re back from breakfast or finished with meetings.
 To start watching a co-worker click on the eye next to the person you'd like to watch. To unwatch a person just click the same icon again.
 
 Watching works in reverse, too - if you’ve just ended a meeting, we’ll (wait a few minutes so you can catch your breath and then) send you a list of people who’re interested in talking to you.
+
+![watch](imgs/watch.png)
 
 *Advanced feature - you can check the list of people you’re watching or who are watching you by running `/qube watching` or `/qube watchers` in slack. (Type `/qube help` if you need reminders of available slack commands).*
 
