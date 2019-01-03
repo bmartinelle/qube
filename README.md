@@ -35,7 +35,7 @@ Advanced feature - you can check the list of people you're watching or who are w
 
 ### Intelligent Time Zones
 
-*View all statuses in your local timezone.* Working remotely is awesome! Constantly converting time zones isn't. When you set your state to busy , away or BRB, you'll notice we ask you for a 'back by' time. Enter when you'll be back in a supported format (such as 1400 or 3pm) in your local timezone. This lets us display all 'back by' times in local times in the sidebar.
+*View all statuses in your local timezone.* Working remotely is awesome! Constantly converting time zones isn't. When you set your state to busy, away or BRB, you'll notice we ask you for a 'back by' time. Enter when you'll be back in a supported format (such as 1400 or 3pm) in your local timezone. This lets us display all 'back by' times in local times in the sidebar.
 
 *Keep office statuses up to date.* Are you in the habit of taking reeaaalllly long lunches because you keep forgetting to update your status when you get back? Well, no more! Slack reminders are here to check up on you when you forget.
 
@@ -68,4 +68,4 @@ For the wanderers and world travelers! Qube will now auto-detect and update your
 *Start meetings in Qube with your personal Zoom link.* Just enable 'Always use Zoom Personal Meeting ID to start meetings' under settings (the gear icon) in Qube. (Note - meetings with PMIDs will take longer to start, so enable only if you use personal Zoom links, and consider starting conference room/auditorium meetings a minute or two early).
 
 
-#### Ready to deploy your own installation of Qube? Our [Qube Deployment](./DEPLOYMENT.md) guide will help get you started.
+#### Ready to deploy your own installation of Qube? Our [Qube Deployment](./pages/DEPLOYMENT.md) guide will help get you started.

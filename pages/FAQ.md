@@ -1,6 +1,9 @@
 ## FAQs
-**I don't receive a notification when someone is knocking on my door. **First, make sure you have allowed Qube to receive notifications. To do so click on the lock icon next to the URL in your browser.
+
+**I don't receive a notification when someone is knocking on my door.**
+First, make sure you have allowed Qube to receive notifications. To do so click on the lock icon next to the URL in your browser.
 Ensure that the dropdown for Notifications says "Allow". If not, change it accordingly.
+
 ![notificationsallowed](./imgs/notificationsAllowed.png)
 
 Still no luck? Use the power button in the top right toolbar to logout and then log back in.
@@ -11,7 +14,7 @@ Also, be sure to disable Focus Assist/Do Not Disturb Mode as those will block Qu
 **How do I run Qube as a standalone app? How do I add Qube appear in my task bar/dock?**
 If you're on Windows, click on the hamburger icon in Chrome. Then navigate to More Tools, and click Add to desktop. Make sure to check the box for a separate window.
 
-If you’re on a Mac, download Epichrome from https://github.com/dmarmor/epichrome/releases (choose the dmg file). Then:
+If you’re on a Mac, download Epichrome from <https://github.com/dmarmor/epichrome/releases> (choose the dmg file). Then:
 
 1. Open Epichrome.
  If you see an error message (“Epichrome” can’t be opened because it is from an unidentified developer.), then go to System Preferences -> Security & Privacy, and click on ‘Open Anyway’ for Epichrome.
