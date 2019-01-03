@@ -12,7 +12,8 @@ Also, be sure to disable Focus Assist/Do Not Disturb Mode as those will block Qu
 **My Zoom meeting is taking a long time to start.** If you're hosting the meeting (the meeting is taking place in your office), click the 'start meeting' button. This will force Zoom to start.
 
 **How do I run Qube as a standalone app? How do I add Qube appear in my task bar/dock?**
-If you're on Windows, click on the hamburger icon in Chrome. Then navigate to More Tools, and click Add to desktop. Make sure to check the box for a separate window.
+
+If you're on Windows, you are out of luck :( As of Nov 2018, Chrome removed the possibility to run Qube as its own app.
 
 If you’re on a Mac, download Epichrome from <https://github.com/dmarmor/epichrome/releases> (choose the dmg file). Then:
 
